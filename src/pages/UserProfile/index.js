@@ -11,7 +11,16 @@ const UserProfile = () => {
             <SideBarVertical />
             <div className="a">
                 <div className="b"></div>
-                <div className="c"></div>
+                <div className="c">
+                    <div className="d">
+                        <div className="daily-activity"></div>
+                        <div className="f"></div>
+
+                    </div>
+                    <div className="e">
+
+                    </div>
+                </div>
             </div>
         </div>
 

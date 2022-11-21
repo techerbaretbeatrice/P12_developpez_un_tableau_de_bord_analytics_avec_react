@@ -9,7 +9,6 @@
     min-height: 933px;
     display: flex;
     flex-direction: row;
-
 }
 
 
@@ -20,18 +19,45 @@
     min-height: 933px;
     display: flex;
     flex-direction: column;
-
 }
 
 .b {
     width: 100%;
     background-color: blueviolet;
-    height: 230px;
+    height: 25%;
 
 }
 
 .c {
     width: 100%;
-    height: 100%;
-    background-color: grey;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+}
+
+.d {
+    width: 70%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+}
+
+.e {
+    width: 30%;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+}
+
+.daily-activity {
+    height: 320px;
+    background-color: aquamarine;
+}
+
+.f {
+    height: 263px;
+    display: flex;
+    flex-direction: row;
+    background-color: azure;
+    margin-top: 56.89px;
 }
