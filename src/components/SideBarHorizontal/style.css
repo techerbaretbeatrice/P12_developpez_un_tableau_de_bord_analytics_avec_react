@@ -2,6 +2,7 @@
 
 .horizontal-sidebar {
     width: 100%;
+    min-width: 1024px;
     height: 91px;
     background-color: #020203;
     display: flex;
@@ -20,6 +21,7 @@
     color: #fff;
     width: 70%;
     margin-left: 140px;
+    margin-right: 64px;
 
 }
 

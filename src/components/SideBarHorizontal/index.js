@@ -1,7 +1,10 @@
 import './style.css'
 import sportsee from '../../assets/sportsee.svg'
 
-
+/**
+ * 
+ * @returns 
+ */
 const SideBarHorizontal = () => {
     return <div>
         <div className='horizontal-sidebar'>
