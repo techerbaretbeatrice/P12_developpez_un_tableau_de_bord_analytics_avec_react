@@ -5,7 +5,10 @@ import swimmer from '../../assets/swimmer.svg'
 import biker from '../../assets/biker.svg'
 import bodybuilding from '../../assets/bodybuilding.svg'
 
-
+/**
+ * Vertical sidebar navigation
+ * @returns SideBarVertical
+ */
 const SideBarVertical = () => {
     return <div className='vertical-sidebar'>
         <nav className='nav-style'>

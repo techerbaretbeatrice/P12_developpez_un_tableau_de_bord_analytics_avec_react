@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .dashbord-style {
     width: 100%;
     position: relative;
@@ -23,8 +25,35 @@
 
 .b {
     width: 100%;
-    background-color: blueviolet;
     height: 25%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 24px;
+    text-align: left;
+
+}
+
+
+.welcome-user {
+    display: flex;
+    flex-direction: row;
+    margin-top: 70px;
+    margin-left: 109px;
+}
+
+.user-firstname {
+    color: #FF0101;
+    margin-left: 10px;
+}
+
+.congratulation-message {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 41px;
+    margin-left: 109px;
 
 }
 

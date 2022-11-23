@@ -1,6 +1,10 @@
 import './style.css'
 import PropTypes from 'prop-types'
 
+/**
+ * button for navigation in  vertical sidebar navigation
+ * @returns NavIcon
+ */
 const NavIcon = (props) => {
     const { icon } = props
 

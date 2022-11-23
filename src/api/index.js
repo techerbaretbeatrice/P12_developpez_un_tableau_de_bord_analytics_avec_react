@@ -1,4 +1,17 @@
-// simuler le comportement attendu lors de l'appel de données
+/**
+ * call api
+ * @async getUserInfoById
+ * @async getUserActivityListByid
+ * @async getUserAverageSessionListById
+ * @async getUserPerformancePerCategory
+ */
+
+/**
+ * call api
+ * @async getUserInfoById
+ * @param {number}id
+ * @return api
+ */
 const getUserInfoById = (id) => {
     return {
         id: 12,
@@ -18,7 +31,12 @@ const getUserInfoById = (id) => {
 }
 
 
-
+/**
+ * call api
+ * @async getUserActivityListById
+ * @param {number}id
+ * @return api
+ */
 const getUserActivityListById = (id) => {
     return [
         {
@@ -39,6 +57,12 @@ const getUserActivityListById = (id) => {
     ]
 }
 
+/**
+ * call api
+ * @async getUserAverageSessionListById
+ * @param  {number}id 
+ * @returns api
+ */
 const getUserAverageSessionListById = (id) => {
     return [
         {
@@ -61,11 +85,19 @@ const getUserAverageSessionListById = (id) => {
     ]
 }
 
+
+/**
+ * getUserPerformancePerCategory
+ * @param {*} kind 
+ * @param {number} id 
+ * @returns api
+ */
 const getUserPerformancePerCategory = (kind, id) => {
     return 80
 }
 
-export {
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
     getUserActivityListById,
     getUserInfoById,
     getUserAverageSessionListById,
