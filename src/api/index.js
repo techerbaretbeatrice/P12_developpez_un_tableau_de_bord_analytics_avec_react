@@ -85,6 +85,32 @@ const getUserAverageSessionListById = (id) => {
     ]
 }
 
+const getUserCompletionById = (id) => {
+    return {
+        id: 12,
+        todayScore: 0.12
+
+    }
+}
+
+const getUserKeyIndicator = (id) => {
+    return {
+        id: 12,
+        userInfos: {
+            firstName: 'Karl',
+            lastName: 'Dovineau',
+            age: 31,
+        },
+        todayScore: 0.12,
+        keyData: {
+            calorieCount: 1930,
+            proteinCount: 155,
+            carbohydrateCount: 290,
+            lipidCount: 50
+        }
+    }
+}
+
 
 /**
  * getUserPerformancePerCategory
@@ -96,10 +122,15 @@ const getUserPerformancePerCategory = (kind, id) => {
     return 80
 }
 
+
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
     getUserActivityListById,
     getUserInfoById,
     getUserAverageSessionListById,
+    getUserCompletionById,
+    getUserKeyIndicator,
     getUserPerformancePerCategory,
+
 }

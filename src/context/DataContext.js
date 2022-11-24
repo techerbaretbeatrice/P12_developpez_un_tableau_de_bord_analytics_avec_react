@@ -16,6 +16,8 @@ export const DataProvider = ({ children }) => {
             userInfo: null,
             activityList: null,
             averageSessionList: null,
+            userCompletion: null,
+            userKeyIndicator: null,
             performance: {
                 cardio: null
             }
@@ -23,6 +25,8 @@ export const DataProvider = ({ children }) => {
         dataObj.userInfo = await api.getUserInfoById(id)
         dataObj.activityList = await api.getUserActivityListById(id)
         dataObj.averageSessionList = await api.getUserAverageSessionListById(id)
+        dataObj.userCompletion = await api.getUserCompletionById(id)
+        dataObj.userKeyIndicator = await api.getUserKeyIndicator(id)
         dataObj.performance = await api.getUserPerformancePerCategory(id)
 
         setData(dataObj)
