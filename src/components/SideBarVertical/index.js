@@ -1,4 +1,4 @@
-import NavIcon from '../NavIcon'
+import NavButton from '../NavButton'
 import './style.css'
 import meditation from '../../assets/meditation.svg'
 import swimmer from '../../assets/swimmer.svg'
@@ -12,10 +12,10 @@ import bodybuilding from '../../assets/bodybuilding.svg'
 const SideBarVertical = () => {
     return <div className='vertical-sidebar'>
         <nav className='nav-style'>
-            <NavIcon icon={meditation} />
-            <NavIcon icon={swimmer} />
-            <NavIcon icon={biker} />
-            <NavIcon icon={bodybuilding} />
+            <NavButton icon={meditation} > </NavButton >
+            <NavButton icon={swimmer} > </NavButton >
+            <NavButton icon={biker} ></NavButton >
+            <NavButton icon={bodybuilding} ></NavButton >
         </nav>
         <span className='copyright'>Copyright, SportSee 2020</span>
 

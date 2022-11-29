@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.info-card {
+    width: 75%;
+    max-width: 258px;
+    height: 20.213%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    background-color: #FBFBFB;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    font-family: 'Roboto', sans-serif;
+}
+
+.info-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.info-key-container {
+    width: 50%;
+}
+
+.key-info {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #282D30;
+    margin-top: 39px;
+    text-align: start;
+}
+
+.key-indicator {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #74798C;
+    text-align: start;
+}
