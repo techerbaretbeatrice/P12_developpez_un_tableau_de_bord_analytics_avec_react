@@ -1,0 +1,58 @@
+import "./style.css";
+import {
+    BarChart,
+    Bar,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+    Legend,
+    ResponsiveContainer
+} from "recharts";
+import { useContext } from 'react'
+import { DataContext } from '../../context/DataContext'
+
+
+const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+        return (
+            <div className="custom-tooltip-activity">
+                <p className="label-activity">{`${payload[0].value} Kg`}</p>
+                <p className="label-activity">{`${payload[1].value} Kcal`}</p>
+            </div>
+        );
+    }
+
+    return null;
+};
+
+const DailyActivity = () => {
+    const { loading, data } = useContext(DataContext)
+
+    return loading ? "en cours de chargement" : <ResponsiveContainer width="100%" height="80%">
+        <BarChart className="bar-chart"
+            width={800}
+            height="60%"
+            data={data?.activityList}
+            margin={{
+                top: 30,
+                right: 30,
+                left: 20,
+                bottom: 5
+            }}
+        >
+            <CartesianGrid strokeDasharray="3 3" vertical={false} />
+            <XAxis tickLine={false} tickSize={14} />
+            <YAxis domain={[69, 71]} yAxisId="right" axisLine={false} orientation="right" tickCount={3} tickLine={false} tickMargin={20} />
+            <YAxis yAxisId="left" axisLine={false} orientation="left" tickCount={3} tickLine={false} tick={false} tickMargin={20} />
+            <Tooltip contentStyle={{ background: "#E60000", border: 0, width: 20, height: 30 }} wrapperStyle={{ outline: "none", top: -25, left: 5 }} content={<CustomTooltip />} />
+            <Legend layout="horizontal" verticalAlign="top" align="right" wrapperStyle={{ top: -20, left: 25 }} iconType="circle" iconSize={8} />
+            <Bar yAxisId="right" dataKey="kilogram" fill="#282D30" barSize={7} radius={[3, 3, 0, 0]} name="Poids(Kg)" />
+            <Bar yAxisId="left" dataKey="calories" fill=" #E60000" barSize={7} radius={[3, 3, 0, 0]} name="Calories brûlées (Kcal)" />
+        </BarChart>
+    </ResponsiveContainer >
+
+}
+
+export default DailyActivity
+

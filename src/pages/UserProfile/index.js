@@ -8,6 +8,11 @@ import apple from '../../assets/apple.svg'
 import chicken from '../../assets/chicken.svg'
 import energy from '../../assets/energy.svg'
 import cheeseburger from '../../assets/cheeseburger.svg'
+import DailyActivity from '../../components/DailyActivity'
+import SessionDuration from '../../components/SessionDuration'
+import Performance from '../../components/Performance'
+import Completion from '../../components/Completion'
+
 
 
 
@@ -28,8 +33,23 @@ const UserProfile = () => {
                 </div>
                 <div className="c">
                     <div className="d">
-                        <div className="daily-activity"></div>
-                        <div className="f"></div>
+                        <span className='title-daily-activity'>Activité quotidienne</span>
+                        <div className="daily-activity">
+                            <DailyActivity />
+                        </div>
+                        <div className="f">
+                            <span className='title-daily-session'>Durée moyenne des sessions</span>
+                            <div className='session'>
+                                <SessionDuration />
+                            </div>
+                            <div className='performance'>
+                                <Performance />
+                            </div>
+                            <div className='completion'>
+                                <span className='title-completion'>Score</span>
+                                <Completion />
+                            </div>
+                        </div>
 
                     </div>
                     <div className="info-cards-container">

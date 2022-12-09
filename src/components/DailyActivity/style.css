@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.bar-chart {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.custom-tooltip-activity {
+    background-color: #E60000;
+    width: 39px;
+    height: 63px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.label-activity {
+    background-color: #E60000;
+    color: #FFF;
+    font-size: 7px;
+
+}

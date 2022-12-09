@@ -1,3 +1,5 @@
+export const USER_ID = 12;
+
 /**
  * call api
  * @async getUserInfoById
@@ -12,22 +14,13 @@
  * @param {number}id
  * @return api
  */
-const getUserInfoById = (id) => {
-    return {
-        id: 12,
-        userInfos: {
-            firstName: 'Karl',
-            lastName: 'Dovineau',
-            age: 31,
-        },
-        todayScore: 0.12,
-        keyData: {
-            calorieCount: 1930,
-            proteinCount: 155,
-            carbohydrateCount: 290,
-            lipidCount: 50
-        }
-    }
+const getUserInfoById = async (id) => {
+    // utiliser fetch pour appeler le l'api qui retourne un JSON response
+    // transforme le retour en json
+    const jsonResult = await fetch(`http://localhost:3000/user/${id}`)
+    const json = await jsonResult.json()
+    console.log(json)
+    return json.data
 }
 
 
@@ -81,6 +74,19 @@ const getUserAverageSessionListById = (id) => {
             day: 4,
             sessionLength: 50
         },
+        {
+            day: 5,
+            sessionLength: 30
+        },
+        {
+            day: 6,
+            sessionLength: 50
+        },
+        {
+            day: 7,
+            sessionLength: 50
+        }
+
 
     ]
 }
@@ -88,7 +94,7 @@ const getUserAverageSessionListById = (id) => {
 const getUserCompletionById = (id) => {
     return {
         id: 12,
-        todayScore: 0.12
+        todayScore: 0.80
 
     }
 }
@@ -118,8 +124,43 @@ const getUserKeyIndicator = (id) => {
  * @param {number} id 
  * @returns api
  */
-const getUserPerformancePerCategory = (kind, id) => {
-    return 80
+const getUserPerformance = (kind, id) => {
+    return {
+        kind: {
+            1: 'cardio',
+            2: 'energy',
+            3: 'endurance',
+            4: 'strength',
+            5: 'speed',
+            6: 'intensity'
+        },
+        data: [
+            {
+                value: 80,
+                kind: 1
+            },
+            {
+                value: 120,
+                kind: 2
+            },
+            {
+                value: 140,
+                kind: 3
+            },
+            {
+                value: 50,
+                kind: 4
+            },
+            {
+                value: 200,
+                kind: 5
+            },
+            {
+                value: 90,
+                kind: 6
+            }
+        ]
+    }
 }
 
 
@@ -131,6 +172,6 @@ export default {
     getUserAverageSessionListById,
     getUserCompletionById,
     getUserKeyIndicator,
-    getUserPerformancePerCategory,
+    getUserPerformance,
 
 }

@@ -7,7 +7,7 @@ export const DataContext = createContext()
 
 export const DataProvider = ({ children }) => {
     const [data, setData] = useState(null)
-    const [userId] = useState(12);
+    const [userId] = useState(18);
     const [loading, setLoading] = useState(false)
 
     const loadData = async (id) => {
@@ -18,16 +18,14 @@ export const DataProvider = ({ children }) => {
             averageSessionList: null,
             userCompletion: null,
             userKeyIndicator: null,
-            performance: {
-                cardio: null
-            }
+            performance: null
         }
         dataObj.userInfo = await api.getUserInfoById(id)
         dataObj.activityList = await api.getUserActivityListById(id)
         dataObj.averageSessionList = await api.getUserAverageSessionListById(id)
         dataObj.userCompletion = await api.getUserCompletionById(id)
         dataObj.userKeyIndicator = await api.getUserKeyIndicator(id)
-        dataObj.performance = await api.getUserPerformancePerCategory(id)
+        dataObj.performance = await api.getUserPerformance(id)
 
         setData(dataObj)
         setLoading(false)
