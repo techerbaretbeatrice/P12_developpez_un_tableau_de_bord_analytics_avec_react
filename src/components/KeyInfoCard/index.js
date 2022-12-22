@@ -4,7 +4,7 @@ import KeyInfoIcon from '../KeyInfoIcon'
 
 /**
  * card infos for key indicator: calorie, proteins, carbohydrates,lipids a day
- * @param {*} props 
+ * @param {*} props : keyInfo, unit, keyIndicator, icon, background 
  * @returns KeyInfoCard
  */
 

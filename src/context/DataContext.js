@@ -7,7 +7,7 @@ export const DataContext = createContext()
 
 export const DataProvider = ({ children }) => {
     const [data, setData] = useState(null)
-    const [userId] = useState(18);
+    const [userId] = useState(12);
     const [loading, setLoading] = useState(false)
 
     const loadData = async (id) => {

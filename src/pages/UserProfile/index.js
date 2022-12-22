@@ -14,7 +14,10 @@ import Performance from '../../components/Performance'
 import Completion from '../../components/Completion'
 
 
-
+/**
+ * page displaying the user dashboard:: horizontal and vertical navigation, user datas charts
+ * @returns UserProfil 
+ */
 
 
 const UserProfile = () => {
@@ -27,7 +30,7 @@ const UserProfile = () => {
                 <div className="b">
                     <div className='welcome-user'>
                         <div className='welcome'>Bonjour </div>
-                        <div className='user-firstname'>{data?.userInfo?.userInfos.firstName} </div>
+                        <div className='user-firstname'>{data?.userInfo?.firstName} </div>
                     </div>
                     <div className='congratulation-message'>Félicitations! Vous avez explosé vos objectifs hier 👏</div>
                 </div>
@@ -53,10 +56,10 @@ const UserProfile = () => {
 
                     </div>
                     <div className="info-cards-container">
-                        <KeyInfoCard icon={energy} background='energy-background' keyInfo={data?.userKeyIndicator?.keyData.calorieCount} unit='Kcal' keyIndicator='Calories' />
-                        <KeyInfoCard icon={chicken} background='chicken-background' keyInfo={data?.userKeyIndicator?.keyData.proteinCount} unit='g' keyIndicator='Protéïnes' />
-                        <KeyInfoCard icon={apple} background='apple-background' keyInfo={data?.userKeyIndicator?.keyData.carbohydrateCount} unit='g' keyIndicator='Glucides' />
-                        <KeyInfoCard icon={cheeseburger} background='cheeseburger-background' keyInfo={data?.userKeyIndicator?.keyData.lipidCount} unit='g' keyIndicator='Lipides' />
+                        <KeyInfoCard icon={energy} background='energy-background' keyInfo={data?.userKeyIndicator?.calorieCount} unit='Kcal' keyIndicator='Calories' />
+                        <KeyInfoCard icon={chicken} background='chicken-background' keyInfo={data?.userKeyIndicator?.proteinCount} unit='g' keyIndicator='Protéïnes' />
+                        <KeyInfoCard icon={apple} background='apple-background' keyInfo={data?.userKeyIndicator?.carbohydrateCount} unit='g' keyIndicator='Glucides' />
+                        <KeyInfoCard icon={cheeseburger} background='cheeseburger-background' keyInfo={data?.userKeyIndicator?.lipidCount} unit='g' keyIndicator='Lipides' />
                     </div>
                 </div>
             </div>

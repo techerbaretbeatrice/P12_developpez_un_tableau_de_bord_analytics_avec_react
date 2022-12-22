@@ -1,18 +1,76 @@
 export const USER_ID = 12;
 
+
 /**
  * call api
  * @async getUserInfoById
  * @async getUserActivityListByid
  * @async getUserAverageSessionListById
- * @async getUserPerformancePerCategory
+ * @async getUserCompletionById
+ * @async getUserPerformance
  */
 
 /**
- * call api
+ * @constructor 
+ */
+class UserInfo {
+    constructor(parameters) {
+        this.firstName = parameters.userInfos?.firstName
+        this.id = parameters.id
+        this.lastName = parameters.lastName
+        this.todayScore = parameters.todayScore || parameters.score
+        this.calorieCount = parameters.keyData.calorieCount
+        this.proteinCount = parameters.keyData.proteinCount
+        this.carbohydrateCount = parameters.keyData.carbohydrateCount
+        this.lipidCount = parameters.keyData.lipidCount
+    }
+}
+
+/**
+ * @constructor 
+ */
+class Performance {
+    constructor(parameters) {
+        this.kind = parameters.kind
+        this.id = parameters.userId
+        this.data = parameters.data.reverse()
+    }
+}
+
+/**
+ * @constructor 
+ */
+class Activity {
+    constructor(parameters) {
+        this.id = parameters.userId
+        this.sessions = parameters.sessions.sort(
+            (a, b) => {
+                console.log(new Date(a.day) > new Date(b.day), a.day, b.day)
+                if (new Date(a.day) < new Date(b.day)) return - 1
+                return 1
+            }
+        ).map((item, idx) => {
+            item.key = idx + 1
+            return item
+        })
+    }
+}
+
+/**
+ * @constructor 
+ */
+class AverageSessions {
+    constructor(parameters) {
+        this.id = parameters.userId
+        this.sessions = parameters.sessions
+    }
+}
+
+/**
+ * call api get datas from localhost:3000/user/id
  * @async getUserInfoById
  * @param {number}id
- * @return api
+ * @return userInfos
  */
 const getUserInfoById = async (id) => {
     // utiliser fetch pour appeler le l'api qui retourne un JSON response
@@ -20,150 +78,88 @@ const getUserInfoById = async (id) => {
     const jsonResult = await fetch(`http://localhost:3000/user/${id}`)
     const json = await jsonResult.json()
     console.log(json)
-    return json.data
+    const userInfo = new UserInfo(json.data)
+    console.log("user info", userInfo)
+    return userInfo
 }
 
 
 /**
- * call api
+ * call api get datas from localhost:3000/user/id/activity
  * @async getUserActivityListById
  * @param {number}id
- * @return api
+ * @return activity
  */
-const getUserActivityListById = (id) => {
-    return [
-        {
-            day: '2020-07-01',
-            kilogram: 70,
-            calories: 240
-        },
-        {
-            day: '2020-07-02',
-            kilogram: 69,
-            calories: 220
-        },
-        {
-            day: '2020-07-03',
-            kilogram: 70,
-            calories: 280
-        },
-    ]
+const getUserActivityListById = async (id) => {
+    const jsonResult = await fetch(`http://localhost:3000/user/${id}/activity`)
+    const json = await jsonResult.json()
+    console.log(json)
+    const activity = new Activity(json.data)
+    return activity
 }
 
+
 /**
- * call api
+ * call api get datas from localhost:3000/user/id/average-sessions
  * @async getUserAverageSessionListById
  * @param  {number}id 
- * @returns api
+ * @returns averageSessions
  */
-const getUserAverageSessionListById = (id) => {
-    return [
-        {
-            day: 1,
-            sessionLength: 30
-        },
-        {
-            day: 2,
-            sessionLength: 23
-        },
-        {
-            day: 3,
-            sessionLength: 45
-        },
-        {
-            day: 4,
-            sessionLength: 50
-        },
-        {
-            day: 5,
-            sessionLength: 30
-        },
-        {
-            day: 6,
-            sessionLength: 50
-        },
-        {
-            day: 7,
-            sessionLength: 50
-        }
+const getUserAverageSessionListById = async (id) => {
+    const jsonResult = await fetch(`http://localhost:3000/user/${id}/average-sessions`)
+    const json = await jsonResult.json()
+    console.log(json)
+    const averageSessions = new AverageSessions(json.data)
+    return averageSessions
 
-
-    ]
 }
 
-const getUserCompletionById = (id) => {
-    return {
-        id: 12,
-        todayScore: 0.80
+/**
+ * call api get datas from localhost:3000/user/id
+ * @async getUserCompletionById
+ * @param {number}id
+ * @return userInfo
+ */
 
-    }
+const getUserCompletionById = async (id) => {
+    const jsonResult = await fetch(`http://localhost:3000/user/${id}`)
+    const json = await jsonResult.json()
+    const userInfo = new UserInfo(json.data)
+    console.log(json)
+    return userInfo
+
 }
 
-const getUserKeyIndicator = (id) => {
-    return {
-        id: 12,
-        userInfos: {
-            firstName: 'Karl',
-            lastName: 'Dovineau',
-            age: 31,
-        },
-        todayScore: 0.12,
-        keyData: {
-            calorieCount: 1930,
-            proteinCount: 155,
-            carbohydrateCount: 290,
-            lipidCount: 50
-        }
-    }
+/**
+ * call api get datas from localhost:3000/user/id
+ * @async getUserInfoById
+ * @param {number}id
+ * @return userInfo
+ */
+
+const getUserKeyIndicator = async (id) => {
+    const jsonResult = await fetch(`http://localhost:3000/user/${id}`)
+    const json = await jsonResult.json()
+    console.log(json)
+    const userInfo = new UserInfo(json.data)
+    return userInfo
+
 }
 
 
 /**
- * getUserPerformancePerCategory
- * @param {*} kind 
+ * getUserPerformance
  * @param {number} id 
  * @returns api
  */
-const getUserPerformance = (kind, id) => {
-    return {
-        kind: {
-            1: 'cardio',
-            2: 'energy',
-            3: 'endurance',
-            4: 'strength',
-            5: 'speed',
-            6: 'intensity'
-        },
-        data: [
-            {
-                value: 80,
-                kind: 1
-            },
-            {
-                value: 120,
-                kind: 2
-            },
-            {
-                value: 140,
-                kind: 3
-            },
-            {
-                value: 50,
-                kind: 4
-            },
-            {
-                value: 200,
-                kind: 5
-            },
-            {
-                value: 90,
-                kind: 6
-            }
-        ]
-    }
+const getUserPerformance = async (id) => {
+    const jsonResult = await fetch(`http://localhost:3000/user/${id}/performance`)
+    const json = await jsonResult.json()
+    console.log(json)
+    const performance = new Performance(json.data)
+    return performance
+
 }
-
-
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -175,3 +171,7 @@ export default {
     getUserPerformance,
 
 }
+
+
+
+

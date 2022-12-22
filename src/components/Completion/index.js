@@ -3,6 +3,13 @@ import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
 import { useContext } from 'react'
 import { DataContext } from '../../context/DataContext'
 
+
+/**
+ * display the text and color of the text of  daily goal percentage in Completion
+ * @module
+ * @param {*} props : cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, percent
+ * @returns {JSX.Element} percentage as text corresponding to the graphic result
+ */
 const renderActiveShape = (props) => {
   const {
     cx,
@@ -16,7 +23,7 @@ const renderActiveShape = (props) => {
     percent
   } = props;
 
-  const textColor = "#FF0000"
+  const textColor = "#000000"
 
   return (
     <g>
@@ -31,14 +38,20 @@ const renderActiveShape = (props) => {
 
 
       />
-      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={textColor} className="text-color">
-        {`${(1 - percent) * 100}%`}
+      <text x={cx} y={cy} dy={0} textAnchor="middle" fill={textColor} className="text-color">
+        {`${(1 - percent).toFixed(2) * 100}%`}
       </text>
     </g>
   );
 };
 
 
+
+/**
+ * chart displaying completion of daily goals in percentage
+ * @param {*} props : name, value, width, height,cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, stroke, cornerRadius, data, datakey,
+ * @returns Completion
+ */
 const Completion = () => {
   const { loading, data } = useContext(DataContext)
   const dataCompletion = [
@@ -49,7 +62,7 @@ const Completion = () => {
   const centerPie = [{ name: 'Group C', value: 300 }]
   const COLORS = ["#FBFBFB", "#FF0000"];
 
-  return (loading ? "en cours de chargement" : <ResponsiveContainer width="100%" height="100%"><PieChart cx={110}
+  return (loading ? "en cours de chargement" : <span className="radar-container"><ResponsiveContainer width="100%" height="100%"><PieChart cx={110}
     cy={120}>
     <Pie data={centerPie} dataKey="value" cx="50%" cy="50%" outerRadius={75} fill="#FFF" />
     <Pie
@@ -60,8 +73,8 @@ const Completion = () => {
       outerRadius={80}
 
       dataKey="value"
-      endAngle={450}
-      startAngle={0}
+      endAngle={-450}
+      startAngle={90}
       stroke="#FBFBFB"
       cornerRadius={18}
     >
@@ -71,10 +84,10 @@ const Completion = () => {
     </Pie>
   </PieChart>
   </ResponsiveContainer>
+    <span className="radar-label">de votre objectif</span>
+  </span>
   );
 }
-
-
 
 
 export default Completion

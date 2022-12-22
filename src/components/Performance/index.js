@@ -29,13 +29,13 @@ const Performance = () => {
         return newItem
     })
 
-    return loading ? "en cours de chargement" : <ResponsiveContainer width="100%" height="100%" cx={300} cy={250}>
+    return loading ? "en cours de chargement" : <ResponsiveContainer width="100%" height="100%">
         <RadarChart
             outerRadius={70}
             data={chartData}
         >
             <PolarGrid radialLines={false} />
-            <PolarAngleAxis dataKey="key" tick={{ fill: "#FFF", fontSize: "12px", fontFamily: "'Roboto', sans-serif" }} />
+            <PolarAngleAxis cx={0} dataKey="key" tick={{ fill: "#FFF", fontSize: "11px", fontFamily: "'Roboto', sans-serif" }} />
 
             <Radar
                 name="Mike"

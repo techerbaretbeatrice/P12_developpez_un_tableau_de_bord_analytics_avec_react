@@ -4,7 +4,12 @@ import { LineChart, Line, XAxis, ResponsiveContainer, Tooltip } from "recharts";
 import { useContext } from 'react'
 import { DataContext } from '../../context/DataContext'
 
-const CustomTooltip = ({ active, payload, label }) => {
+/**
+ * display a custumize tooltip container in component SessionDuration
+ * @returns {JSX.Element} custumize tooltip container
+ */
+
+const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
             <div className="custom-tooltip">
@@ -16,6 +21,10 @@ const CustomTooltip = ({ active, payload, label }) => {
     return null;
 };
 
+/**
+ *  chart displaying datas of duration for each session 
+ * @returns {JSX.Element} line chart component: SessionDuration
+ */
 
 const SessionDuration = () => {
     const { loading, data } = useContext(DataContext)
@@ -24,7 +33,7 @@ const SessionDuration = () => {
 
 
     return loading ? "en cours de chargement" : <ResponsiveContainer width="100%" height="80%" >
-        <LineChart data={data?.averageSessionList?.map(item => {
+        <LineChart data={data?.averageSessionList?.sessions.map(item => {
             const newItem = item
             const dayList = ["L", "M", "M", "J", "V", "S", "D"]
             newItem.dayLetter = dayList[item.day - 1]
