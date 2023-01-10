@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Requirements
+`node > v1.18.10`
+
 ## Run the API service
 
 ###  Clone the API project
