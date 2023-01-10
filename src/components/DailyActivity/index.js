@@ -15,7 +15,9 @@ import { DataContext } from '../../context/DataContext'
 
 /**
  * display a custumize tooltip container in component Dailyactivity
- * @returns {JSX.Element} custumize tooltip container
+ * @component
+ * {@link https://recharts.org/en-US/examples/CustomContentOfTooltip Recharts}
+ * @returns  custumize tooltip container with weight value (kg) and calory value (kcal)
  */
 
 const CustomTooltip = ({ active, payload }) => {
@@ -32,7 +34,9 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 /**
- * chart displaying datas of daily activities (weight and burned calories)
+ * chart displaying datas of daily activities for a user (weight and burned calories per day)
+ * {@link https://recharts.org/en-US/examples/BiaxialBarChart Recharts}
+ * @component
  * @returns {JSX.Element} bar chart component:  DaylyActivity
  */
 
@@ -44,7 +48,6 @@ const DailyActivity = () => {
     }) || []
     const min = sortedData[0]?.kilogram
     const max = sortedData[sortedData?.length - 1]?.kilogram
-    console.log(data?.activityList?.sessions)
     return loading ? "en cours de chargement" : <ResponsiveContainer width="100%" height="80%">
         <BarChart className="bar-chart"
             height="60%"

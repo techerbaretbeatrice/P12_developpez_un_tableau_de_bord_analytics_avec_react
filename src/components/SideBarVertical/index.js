@@ -7,6 +7,7 @@ import bodybuilding from '../../assets/bodybuilding.svg'
 
 /**
  * Vertical sidebar navigation
+ * @component
  * @returns SideBarVertical
  */
 const SideBarVertical = () => {

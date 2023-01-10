@@ -22,7 +22,10 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 /**
- *  chart displaying datas of duration for each session 
+ * chart displaying datas of duration for each session 
+ * @component
+ * {@link https://recharts.org/en-US/examples/SimpleLineChart Recharts}
+ * {@link https://recharts.org/en-US/examples/TinyLineChart Recharts}
  * @returns {JSX.Element} line chart component: SessionDuration
  */
 

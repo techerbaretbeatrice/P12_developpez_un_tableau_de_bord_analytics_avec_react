@@ -2,6 +2,15 @@ import './style.css'
 import Icon from '../Icon'
 import PropTypes from 'prop-types'
 
+/**
+ * icon in  card infos for key indicator: calorie, proteins, carbohydrates,lipids a day
+ * @component
+ * @param {*} props :  icon, background 
+ * @example
+ * <KeyInfoIcon  background = 'chicken-background' /> : className
+ * <KeyInfoIcon  icon = 'chicken' /> : icon path
+ * @returns KeyInfoIcon
+ */
 const KeyInfoIcon = (props) => {
     const { icon, background } = props
 

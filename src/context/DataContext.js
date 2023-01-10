@@ -1,7 +1,11 @@
 import { useState, useEffect, createContext } from 'react'
 import api from '../api'
 
-
+/**
+ * data context 
+ * @module
+ * @return Provider
+ */
 
 export const DataContext = createContext()
 

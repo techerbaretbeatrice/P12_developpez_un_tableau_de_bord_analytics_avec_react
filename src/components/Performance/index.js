@@ -10,6 +10,13 @@ import {
 import { useContext } from 'react'
 import { DataContext } from '../../context/DataContext'
 
+/**
+ * chart displaying user performance by categories: cardio, energy... 
+ * {@link https://recharts.org/en-US/examples/SimpleRadarChart Rechart}
+ * * @component
+ * @returns Completion radial chart
+ */
+
 const Performance = () => {
     const { loading, data } = useContext(DataContext)
 

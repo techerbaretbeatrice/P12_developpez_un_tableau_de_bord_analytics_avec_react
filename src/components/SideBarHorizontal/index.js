@@ -3,6 +3,7 @@ import sportsee from '../../assets/sportsee.svg'
 
 /**
  *  horizontal sidebar navigation
+ * @component
  * @returns SideBarHorizontal
  */
 const SideBarHorizontal = () => {

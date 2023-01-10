@@ -15,7 +15,7 @@ import Completion from '../../components/Completion'
 
 
 /**
- * page displaying the user dashboard:: horizontal and vertical navigation, user datas charts
+ * page displaying the user dashboard:: horizontal and vertical navigation components, user datas charts component
  * @returns UserProfil 
  */
 

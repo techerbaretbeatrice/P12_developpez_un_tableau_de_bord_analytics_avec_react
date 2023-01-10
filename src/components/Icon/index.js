@@ -3,7 +3,12 @@ import PropTypes from 'prop-types'
 
 /**
  * Icon for button and key infos category
- * @param {string} props 
+ * 
+ * @component 
+ * @param {object} props `{icon, iconPosition}`
+ * @example
+ * <Icon icon={bike} /> : icon path
+ * <Icon iconPosition= /> : className
  * @returns Icon
  */
 const Icon = (props) => {
@@ -14,7 +19,8 @@ const Icon = (props) => {
 }
 
 Icon.propTypes = {
-    icon: PropTypes.string
+    icon: PropTypes.string,
+    iconPosition: PropTypes.string
 }
 
 

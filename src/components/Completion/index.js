@@ -6,9 +6,10 @@ import { DataContext } from '../../context/DataContext'
 
 /**
  * display the text and color of the text of  daily goal percentage in Completion
- * @module
+ * @
+ * {@link https://recharts.org/en-US/examples/CustomActiveShapePieChart Rechart}
  * @param {*} props : cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, percent
- * @returns {JSX.Element} percentage as text corresponding to the graphic result
+ * @returns  percentage as text corresponding to the graphic result
  */
 const renderActiveShape = (props) => {
   const {
@@ -49,7 +50,8 @@ const renderActiveShape = (props) => {
 
 /**
  * chart displaying completion of daily goals in percentage
- * @param {*} props : name, value, width, height,cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, stroke, cornerRadius, data, datakey,
+ * {@link https://recharts.org/en-US/examples/CustomActiveShapePieChart Rechart}
+ * @component
  * @returns Completion
  */
 const Completion = () => {

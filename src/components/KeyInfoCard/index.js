@@ -3,8 +3,14 @@ import PropTypes from 'prop-types'
 import KeyInfoIcon from '../KeyInfoIcon'
 
 /**
- * card infos for key indicator: calorie, proteins, carbohydrates,lipids a day
- * @param {*} props : keyInfo, unit, keyIndicator, icon, background 
+ * @component card infos for key indicator: calorie, proteins, carbohydrates,lipids a day
+ * @param {*} props : keyInfo, unit, keyIndicator, icon, background
+ * @example
+ * <KeyInfoCard keyinfo = {data.userKeyIndicator.calorieCount} /> : path to resources in Api
+ * <KeyInfoCard   unit = g /> : unit of measure 
+ * <KeyInfoCard  keyIndicator = 'calories' /> : text value of key indicator
+ * <KeyInfoCard  icon = {chiken} /> : icon path
+ * <KeyInfoCard  background = 'chicken-background' /> : className
  * @returns KeyInfoCard
  */
 

@@ -4,8 +4,9 @@ import PropTypes from 'prop-types'
 
 
 /**
- * button for navigation in  vertical sidebar navigation
- * @params {*} props: icon
+ *  button for navigation in  vertical sidebar navigation
+ * @component
+ * @params {} props: icon
  * @returns NavButton
  */
 const NavButton = (props) => {
