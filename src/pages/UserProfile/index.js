@@ -21,7 +21,8 @@ import Completion from '../../components/Completion'
 
 
 const UserProfile = () => {
-    const { loading, data } = useContext(DataContext)
+    const { loading, data, error } = useContext(DataContext)
+    if (error) return "Erreur de chargement des données"
     return loading ? "en cours de chargement" : <div className='dashboard-style'>
         <SideBarHorizontal />
         <div className="board">
