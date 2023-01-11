@@ -27,21 +27,21 @@ const UserProfile = () => {
         <SideBarHorizontal />
         <div className="board">
             <SideBarVertical />
-            <div className="a">
-                <div className="b">
+            <div className="dashboard-container">
+                <div className="user-info-container">
                     <div className='welcome-user'>
                         <div className='welcome'>Bonjour </div>
                         <div className='user-firstname'>{data?.userInfo?.firstName} </div>
                     </div>
                     <div className='congratulation-message'>Félicitations! Vous avez explosé vos objectifs hier 👏</div>
                 </div>
-                <div className="c">
-                    <div className="d">
+                <div className="graph-kpi-container">
+                    <div className="graph-container">
                         <span className='title-daily-activity'>Activité quotidienne</span>
                         <div className="daily-activity">
                             <DailyActivity />
                         </div>
-                        <div className="f">
+                        <div className="graph-small-container">
                             <span className='title-daily-session'>Durée moyenne des sessions</span>
                             <div className='session'>
                                 <SessionDuration />
